@@ -1,41 +1,42 @@
 name: itvlist
 
 on:
-   push:
-   schedule:
-    - cron: '0 2,11 * * *'
-   workflow_dispatch:
+  push:
+  schedule:
+    - cron: '0 2,11 * * *' 
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 检出代码
         uses: actions/checkout@v2
-    
-      - name: Set up Python
+
+      - name: 设置 Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
 
-      - name: Install dependencies
+      - name: 安装依赖项
         run: pip install selenium requests futures eventlet opencv-python
 
-      - name: Run itv_all
+      - name: 运行 itv_all
         run: python ${{ github.workspace }}/itv_all.py
-      - name: Run itv_test
-        run: python ${{ github.workspace }}/itvtest(1080).py   
 
-      #- name: Run cctv
+      - name: 运行 itv_test
+        run: python ${{ github.workspace }}/itvtest1080.py
+
+      #- name: 运行 cctv
         #run: python ${{ github.workspace }}/cctv.py
-        
-      #- name: Run weishi
+
+      #- name: 运行 weishi
         #run: python ${{ github.workspace }}/weishi.py
-        
-      #- name: Run qita
+
+      #- name: 运行 qita
         #run: python ${{ github.workspace }}/qita.py
-        
+
       - name: 提交更改
         run: |
           git config --local user.email "chenhua.xu@qq.com"
