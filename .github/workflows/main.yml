@@ -1,11 +1,10 @@
 name: itvlist
 
 on:
-  schedule:
-    - cron: '0 9,21 * * *'
-  push:
-    branches:
-      - main
+   push:
+   schedule:
+    - cron: '0 2,11 * * *'
+   workflow_dispatch:
 
 jobs:
   build:
