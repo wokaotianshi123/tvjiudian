@@ -433,4 +433,4 @@ with open("itvlist.m3u", 'w', encoding='utf-8') as file:
                 file.write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
          
-    file.write(f"{now_today}更新,#genre#\n")
+
