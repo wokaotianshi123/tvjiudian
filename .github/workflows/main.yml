@@ -2,8 +2,8 @@ name: itvlist
 
 on:
   
-  schedule:
-    - cron: '0 2,11 * * *' 
+  #schedule:
+    #- cron: '0 2,11 * * *' 
   workflow_dispatch:
 
 jobs:
