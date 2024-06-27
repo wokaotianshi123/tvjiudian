@@ -21,7 +21,7 @@ jobs:
 
       - name: 安装依赖项
         run: pip install selenium requests futures eventlet opencv-python paddlepaddle paddleocr pillow
-
+             pip install --upgrade numpy
       #- name: 运行 itv_all1080并筛选
        # run: python ${{ github.workspace }}/itv_all1080.py
 
